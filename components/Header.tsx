@@ -30,18 +30,18 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <span className="text-2xl font-bold text-indigo-600">Logo</span>
+              <span className="text-2xl font-bold text-indigo-600">الرؤية</span>
             </div>
 
             <div className='flex items-center gap-5 '>
               <Link href="/">
-                <X size={28} />
+                <X size={24} />
               </Link>
               <Link href="/">
-                <Instagram size={28} />
+                <Instagram size={24} />
               </Link>
               <Link href="/">
-                <Facebook size={28} />
+                <Facebook size={24} />
               </Link>
             </div>
 
