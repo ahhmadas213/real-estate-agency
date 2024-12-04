@@ -31,7 +31,7 @@ export default function About() {
             variants={fadeIn}
             className="text-white px-4"
           >
-            <h1 className="text-5xl font-bold mb-6">من نحن</h1>
+            <h1 className="text-5xl text-blue-400 font-bold mb-6">من نحن</h1>
             <p className="text-xl max-w-3xl mx-auto">
               نحن وكالة عقارية رائدة في المملكة العربية السعودية، نقدم خدمات عقارية متكاملة بخبرة تمتد لأكثر من 15 عاماً
             </p>

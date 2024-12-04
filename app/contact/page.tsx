@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { contactInfo } from "@/lib/data";
 import { useState } from "react";
-
+import Image from "next/image";
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -127,7 +127,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <img
+            <Image width={500} height={500}
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3"
               alt="Office"
               className="w-full h-full object-cover"

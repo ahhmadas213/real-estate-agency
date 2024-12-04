@@ -4,16 +4,16 @@ import { LucideIcon } from 'lucide-react'
 export interface PropertyProps {
   title: string,
   location: string,
-  beds : number,
-  bathRooms : number,
+  beds: number,
+  bathRooms: number,
   type: string,
-  images: string[] 
+  images: string[]
 }
 
 export type TestimonialProps = {
-  name : string,
+  name: string,
   title: string,
-  rating  : number,
+  rating: number,
   testimony: string
 }
 
@@ -41,7 +41,7 @@ export interface ContactFormData {
 }
 
 export interface ServiceItem {
-  icon: unknown;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
 }

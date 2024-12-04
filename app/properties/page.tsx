@@ -16,11 +16,11 @@ export default function Properties() {
     if (filters.type && filters.type !== "all") {
       filtered = filtered.filter((p) => p.type === filters.type);
     }
-    
+
     if (filters.location && filters.location !== "all") {
       filtered = filtered.filter((p) => p.location.includes(filters.location!));
     }
-    
+
     if (filters.bedrooms && filters.bedrooms !== "all") {
       const bedroomCount = Number(filters.bedrooms);
       if (!isNaN(bedroomCount)) {
@@ -44,7 +44,7 @@ export default function Properties() {
             transition={{ duration: 0.6 }}
             className="text-white px-4"
           >
-            <h1 className="text-5xl font-bold mb-6">عقاراتنا</h1>
+            <h1 className="text-5xl text-blue-400 font-bold mb-6">عقاراتنا</h1>
             <p className="text-xl max-w-3xl mx-auto">
               اكتشف مجموعة متنوعة من العقارات المميزة في أفضل المواقع
             </p>
