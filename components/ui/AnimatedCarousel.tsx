@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, ReactNode } from 'react'
+import React, { useState, ReactNode, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
@@ -10,6 +10,33 @@ interface AnimatedCarouselProps {
 
 export default function AnimatedCarousel({ children }: AnimatedCarouselProps): JSX.Element {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const [slidePercentage, setSlidePercentage] = useState<number>(100)
+  const [windowWidth, setWindowWidth] = useState<number>(0)
+
+  useEffect(() => {
+    // Set initial window width
+    setWindowWidth(window.innerWidth)
+
+    // Update dimensions on resize
+    const handleResize = () => {
+      const width = window.innerWidth
+      setWindowWidth(width)
+
+      if (width >= 1024) {
+        setSlidePercentage(33.33) // Large screens: 3 cards
+      } else if (width >= 768) {
+        setSlidePercentage(50) // Medium screens: 2 cards
+      } else {
+        setSlidePercentage(100) // Small screens: 1 card
+      }
+    }
+
+    // Set initial slide percentage
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const handlePrev = (): void => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + children.length) % children.length)
@@ -17,15 +44,6 @@ export default function AnimatedCarousel({ children }: AnimatedCarouselProps): J
 
   const handleNext = (): void => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % children.length)
-  }
-
-  const getSlidePercentage = () => {
-    if (typeof window !== 'undefined') {
-      if (window.innerWidth >= 1024) return 33.33; // Large screens: 3 cards
-      if (window.innerWidth >= 768) return 50; // Medium screens: 2 cards
-      return 100; // Small screens: 1 card
-    }
-    return 100; // Default to 1 card for SSR
   }
 
   return (
@@ -51,13 +69,17 @@ export default function AnimatedCarousel({ children }: AnimatedCarouselProps): J
         <motion.div
           className="flex justify-between gap-6 lg:gap-4"
           animate={{
-            x: `calc(-${currentIndex * getSlidePercentage()}% - ${currentIndex * (window.innerWidth >= 1024 ? 1 : 1.5)}rem)`
+            x: `calc(-${currentIndex * slidePercentage}% - ${currentIndex * (windowWidth >= 1024 ? 1 : 1.5)}rem)`
           }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
         >
           {React.Children.map(children, (child, index) => (
             <motion.div key={index} className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0">
-              {child}
+              {child ? (child) : (
+                <div className='w-[350px] h-[400px] bg-slate-400 text-right  shadow-md overflow-hidden cursor-pointer transition-transform hover:scale-105' >
+
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -76,4 +98,3 @@ export default function AnimatedCarousel({ children }: AnimatedCarouselProps): J
     </div>
   )
 }
-

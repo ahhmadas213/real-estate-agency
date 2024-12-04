@@ -15,7 +15,7 @@ const Hero = () => {
           <h1 className='text-4xl font-semibold md:text-6xl  mb-4'>
             ابحث عن بيت احلامك
           </h1>
-            <p className='text-lg md:text-2xl text-black'>
+            <p className='text-lg md:text-2xl text-gray-200'>
             نحن ندرك حقيقة أن الأشخاص المعاصرين يسعون جاهدين لتحقيق أقصى قدر من الراحة.
             </p>
         </div>

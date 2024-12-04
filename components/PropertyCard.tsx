@@ -8,7 +8,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Button } from "@/components/ui/button"
 
 
-// import { Link } from "lucide-react"
 const PropertyCard = ({ property }: { property: PropertyProps }) => {
   const { title, location, beds, bathRooms, type, images } = property
   const [isOpen, setIsOpen] = useState(false)
@@ -70,8 +69,6 @@ const PropertyCard = ({ property }: { property: PropertyProps }) => {
               <Link href='properties' className='flex items-center justify-center  text-blue-400'>
                 <ChevronRight />
                 اكتشف
-
-
               </Link>
             </div>
         </div>

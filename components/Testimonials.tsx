@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 import AnimatedCarousel from './ui/AnimatedCarousel'
 import TestimoialCard from './ui/TestimonialCard'
 import { testimonials } from '@/lib/data'

@@ -85,7 +85,7 @@ const RealEstateSearch = () => {
                   onChange={(e) =>
                     setFilters({ ...filters, location: e.target.value })
                   }
-                  className="w-full p-2 border border-gray-200  focus:outline-none focus:border-blue-500"
+                  className="w-full p-2 border border-gray-200 focus:outline-none focus:border-blue-500"
                 >
                   <option value="">اختر الموقع</option>
                   {locations.map((location) => (
@@ -110,7 +110,7 @@ const RealEstateSearch = () => {
                       propertyType: e.target.value as PropertyType,
                     })
                   }
-                  className="w-full p-2 border border-gray-200  focus:outline-none focus:border-blue-500"
+                  className="w-full p-2 border border-gray-200  focus:outline-none focus:border-blue-400"
                 >
                   <option value="">اختر نوع العقار</option>
                   {propertyTypes.map((type) => (
@@ -134,8 +134,8 @@ const RealEstateSearch = () => {
                         setFilters({ ...filters, listingType: type.value })
                       }
                       className={`flex-1 py-2 px-4  transition-all duration-200 ${filters.listingType === type.value
-                        ? 'bg-blue-500 text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        ? 'bg-blue-400 text-white'
+                        : 'bg-primary text-white hover:to-blue-400'
                         }`}
                     >
                       {type.label}
@@ -149,7 +149,7 @@ const RealEstateSearch = () => {
             <div className="mt-6 flex justify-center">
               <button
                 onClick={handleSearch}
-                className="bg-blue-500 text-white px-8 py-3 w-full hover:bg-blue-600 transition-colors duration-200 shadow-md hover:shadow-lg"
+                className="bg-primary text-white px-8 py-3 w-full hover:bg-blue-400 transition-colors duration-200 shadow-md hover:shadow-lg"
               >
                 بحث
               </button>
