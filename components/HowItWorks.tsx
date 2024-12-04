@@ -20,7 +20,6 @@ const HowItWorks = () => {
               اعثر على البيت المناسب لك بسهولة مع منصتنا التي توفر لك تجربة بحث متكاملة تلبي جميع احتياجاتك. سواء كنت تبحث عن منزل في المدينة أو الريف، صغير أو كبير، يمكنك تصفح مجموعة واسعة من الخيارات المصممة لتناسب ميزانيتك وأسلوب حياتك.
             </p>
 
-
             <div className='flex items-center justify-between mt-8'>
               <Link href='properties' className='flex items-center justify-center  text-blue-400'>
                 <ChevronRight />

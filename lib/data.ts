@@ -1,5 +1,6 @@
-import { PropertyProps, TestimonialProps } from "@/types";
-
+import { PropertyProps, TestimonialProps, Property, ServiceItem, StatItem } from "@/types";
+import { Home, Building, Search, HandshakeIcon, BarChart, Shield, Phone, Mail, MapPin, Clock } from "lucide-react";
+// import { Property, ServiceItem, StatItem } from "@/types";
 export const PropertiesData: PropertyProps[] = [
   {
     title: "فيلا فاخرة مع حديقة خاصة",
@@ -165,3 +166,120 @@ export const quickLinks = {
     { title: "تقييم", url: "/valuation" },
   ],
 };
+
+
+
+
+export const services: ServiceItem[] = [
+  {
+    icon: Home,
+    title: "بيع وشراء العقارات",
+    description: "نساعدك في العثور على العقار المناسب أو بيع عقارك بأفضل سعر"
+  },
+  {
+    icon: Building,
+    title: "إدارة الأملاك",
+    description: "نقدم خدمات إدارة شاملة لعقاراتك لضمان أفضل عائد استثماري"
+  },
+  {
+    icon: Search,
+    title: "التقييم العقاري",
+    description: "تقييم محترف ودقيق للعقارات باستخدام أحدث الأساليب والمعايير"
+  },
+  {
+    icon: HandshakeIcon,
+    title: "الاستشارات العقارية",
+    description: "نقدم استشارات متخصصة لمساعدتك في اتخاذ القرار الاستثماري الصحيح"
+  },
+  {
+    icon: BarChart,
+    title: "دراسات السوق",
+    description: "تحليل شامل لسوق العقارات وتقديم رؤى قيمة للمستثمرين"
+  },
+  {
+    icon: Shield,
+    title: "الخدمات القانونية",
+    description: "مساعدة قانونية كاملة في جميع المعاملات العقارية"
+  }
+];
+
+export const stats: StatItem[] = [
+  { icon: Building, title: "1000+", desc: "عقار تم بيعه" },
+  { icon: HandshakeIcon, title: "500+", desc: "عميل راضٍ" },
+  { icon: Shield, title: "15+", desc: "سنة خبرة" },
+  { icon: Clock, title: "24/7", desc: "خدمة العملاء" }
+];
+
+export const contactInfo = [
+  {
+    icon: Phone,
+    title: "اتصل بنا",
+    details: ["+966 12 345 6789", "+966 12 345 6788"]
+  },
+  {
+    icon: Mail,
+    title: "راسلنا",
+    details: ["info@realestate.com", "support@realestate.com"]
+  },
+  {
+    icon: MapPin,
+    title: "موقعنا",
+    details: ["شارع الملك فهد", "الرياض، المملكة العربية السعودية"]
+  },
+  {
+    icon: Clock,
+    title: "ساعات العمل",
+    details: ["الأحد - الخميس: 9:00 - 18:00", "الجمعة - السبت: مغلق"]
+  }
+];
+
+export const properties: Property[] = [
+  {
+    id: "1",
+    title: "فيلا فاخرة في حي النرجس",
+    description: "فيلا حديثة بتصميم عصري وإطلالة رائعة على المدينة",
+    price: 2500000,
+    location: "حي النرجس، الرياض",
+    type: "villa",
+    bedrooms: 5,
+    bathrooms: 6,
+    area: 450,
+    amenities: ["حديقة خاصة", "مسبح", "غرفة خادمة", "مصعد", "موقف سيارات"],
+    images: [
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3"
+    ],
+    featured: true
+  },
+  {
+    id: "2",
+    title: "شقة مميزة في برج السلام",
+    description: "شقة حديثة بموقع استراتيجي وخدمات متكاملة",
+    price: 900000,
+    location: "شارع الملك فهد، الرياض",
+    type: "apartment",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 180,
+    amenities: ["أمن 24/7", "نادي رياضي", "موقف سيارات", "مصعد"],
+    images: [
+      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3"
+    ],
+    featured: true
+  },
+  {
+    id: "3",
+    title: "أرض تجارية في حي العليا",
+    description: "أرض تجارية بموقع حيوي مناسبة للاستثمار",
+    price: 5000000,
+    location: "حي العليا، الرياض",
+    type: "land",
+    area: 1000,
+    amenities: ["شارعين", "موقع حيوي", "مخطط معتمد"],
+    images: [
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3"
+    ],
+    featured: false
+  }
+];

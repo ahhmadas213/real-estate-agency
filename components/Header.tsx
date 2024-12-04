@@ -19,6 +19,7 @@ const Header = () => {
     { label: 'الرئيسية', href: '/' },
     { label: 'من نحن', href: '/about' },
     { label: 'خدماتنا', href: '/services' },
+    { label: 'العقارات', href: '/properties' },
 
   ];
 
@@ -30,18 +31,20 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <span className="text-2xl font-bold text-indigo-600">الرؤية</span>
+              <Link href="/">
+                <span className="text-2xl font-bold text-black ">الرؤية</span>
+              </Link>
             </div>
 
             <div className='flex items-center gap-5 '>
-              <Link href="/">
-                <X size={24} />
+              <Link href="/" target='_blank'>
+                <X className='text-slate-200' size={24} />
               </Link>
-              <Link href="/">
-                <Instagram size={24} />
+              <Link href="/" target='_blank'>
+                <Instagram className='text-slate-200' size={24} />
               </Link>
-              <Link href="/">
-                <Facebook size={24} />
+              <Link href="/" target='_blank'>
+                <Facebook className='text-slate-200' size={24} />
               </Link>
             </div>
 
@@ -52,10 +55,10 @@ const Header = () => {
                   key={item.label}
                   href={item.href}
                   className={`
-                    relative px-3 py-2 text-sm font-medium transition-colors duration-200
+                    relative px-3 py-2 text-xl text-slate-100 font-medium transition-colors duration-200
                     ${pathname === item.href
-                      ? 'text-indigo-600 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-indigo-600'
-                      : 'text-gray-700 hover:text-indigo-600'
+                      ? '!text-blue-400 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-400'
+                      : 'text-gray-700 hover:text-blue-400'
                     }
                   `}
                 >
