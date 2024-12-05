@@ -48,7 +48,7 @@ export default function AnimatedCarousel({ children }: AnimatedCarouselProps): J
 
   return (
     <div className="w-full mx-auto relative">
-      <div className="absolute right-[20px] -translate-x-1/ -top-6 gap-5 flex space-x-2 mb-4 z-10">
+      <div className="absolute right-0 -translate-x-1/ -top-6 gap-5 flex space-x-2 mb-4 z-10">
         <button
           onClick={handlePrev}
           className="p-4 bg-slate-300 text-primary-foreground shadow-md hover:bg-primary/90 transition-colors"

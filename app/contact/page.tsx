@@ -25,9 +25,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen  bg-white">
       <div className="relative h-[40vh] mb-12">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-4.0.3')] bg-cover bg-center">
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
         <div className="relative h-full flex items-center justify-center text-center">
@@ -52,7 +52,7 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gray-50 p-8 text-center"
+              className="bg-gray-50 shadow-lg border border-blue-400/20 p-8 text-center"
             >
               <info.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-bold mb-4">{info.title}</h3>
@@ -63,11 +63,11 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid  md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-gray-50 p-8"
+            className="bg-gray-50 p-8 shadow-lg border border-blue-400/20"
           >
             <h2 className="text-2xl font-bold mb-6 text-right">ارسل لنا رسالة</h2>
             <form onSubmit={handleSubmit} className="space-y-6">

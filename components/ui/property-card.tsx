@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { MapPin, Bed, Bath, Ruler } from "lucide-react";
 import Link from "next/link";
 import { Property } from "@/types";
-
+import Image from "next/image";
 interface PropertyCardProps {
   property: Property;
   index: number;
@@ -20,7 +20,8 @@ export function PropertyCard({ property, index }: PropertyCardProps) {
     >
       <Link href={`/properties/${property.id}`}>
         <div className="relative h-64">
-          <img
+          <Image width={500}
+            height={500}
             src={property.images[0]}
             alt={property.title}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"

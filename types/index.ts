@@ -24,7 +24,7 @@ export interface Property {
   description: string;
   price: number;
   location: string;
-  type: 'apartment' | 'villa' | 'land' | 'commercial';
+  type: 'apartment' | 'villa' | 'land' | 'commercial' | string;
   bedrooms?: number;
   bathrooms?: number;
   area: number;

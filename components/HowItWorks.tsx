@@ -5,13 +5,13 @@ import { ChevronRight } from 'lucide-react'
 const HowItWorks = () => {
   return (
     <div className='min-h-[80vh] py-24 flex items-center justify-center w-full bg-primary -mt-[30vh]'>
-      <div className=' container  pt-[20rem] mx-auto px-6'>
+      <div className=' container pt-[5rem] md:pt-[20rem] mx-auto p-2'>
         <h1 className='text-white font-bold md:text-center md:text-4xl mb-6 text-2xl'>كيف نعمل</h1>
         <ProcessTimeline />
-        <div className='w-full max-h-[400px] overflow-hidden p-6 flex items-center justify-center md:justify-start bg-white mt-6 bg-cover bg-center'
+        <div className='w-full max-h-[400px] overflow-hidden p-2 md:p-6 flex items-center justify-center md:justify-start bg-white mt-6 bg-cover bg-center'
           style={{ backgroundImage: "url(/property/p1.jpg)" }}
         >
-          <div className='bg-white  w-[350px]  h-full p-8'>
+          <div className='bg-white w-[350px]  h-full p-8'>
             <h2 className='text-lg font-bold'>
               اعثر على البيت المناسب لك
             </h2>
@@ -24,7 +24,6 @@ const HowItWorks = () => {
               <Link href='properties' className='flex items-center justify-center  text-blue-400'>
                 <ChevronRight />
                 اكتشف
-
 
               </Link>
             </div>

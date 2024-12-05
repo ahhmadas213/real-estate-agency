@@ -5,10 +5,25 @@ import { motion } from "framer-motion";
 import { properties } from "@/lib/data";
 import { MapPin, Home, Ruler, Bath, Bed } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function PropertyDetails() {
-  const { id } = useParams();
-  const property = properties.find(p => p.id === id);
+  const params = useParams();
+
+  // Handle the ID parameter, ensuring it's a string
+  const id = Array.isArray(params.id) ? params.id[0] : params.id || "";
+
+  // First decode the URI component
+  const decodedId = decodeURIComponent(id);
+
+  // Replace URL-safe hyphens with spaces and clean up any extra spaces
+  const normalizedId = decodedId
+    .replace(/-+/g, ' ')  // Replace one or more hyphens with a single space
+    .replace(/\s+/g, ' ') // Replace multiple spaces with a single space
+    .trim();             // Remove leading/trailing spaces
+
+  // Find the property using the normalized ID
+  const property = properties.find(p => p.title.trim() === normalizedId);
 
   if (!property) {
     return (
@@ -27,7 +42,9 @@ export default function PropertyDetails() {
     <div className="min-h-screen bg-gray-50">
       <div className="relative h-[50vh]">
         <div className="absolute inset-0">
-          <img
+          <Image
+            width={400}
+            height={400}
             src={property.images[0]}
             alt={property.title}
             className="w-full h-full object-cover"
@@ -56,7 +73,7 @@ export default function PropertyDetails() {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-8"
           >
-            <div className="bg-white p-8">
+            <div className="bg-white shadow-lg border border-blue-400/20 p-8">
               <h2 className="text-2xl font-bold mb-6 text-right">تفاصيل العقار</h2>
               <div className="grid grid-cols-2 gap-6 text-right">
                 <div className="flex items-center gap-3 justify-end">
@@ -82,14 +99,14 @@ export default function PropertyDetails() {
               </div>
             </div>
 
-            <div className="bg-white p-8">
+            <div className="bg-white shadow-lg border border-blue-400/20 p-8">
               <h2 className="text-2xl font-bold mb-6 text-right">الوصف</h2>
               <p className="text-gray-600 leading-relaxed text-right">
                 {property.description}
               </p>
             </div>
 
-            <div className="bg-white p-8">
+            <div className="bg-white shadow-lg border border-blue-400/20 p-8">
               <h2 className="text-2xl font-bold mb-6 text-right">المميزات</h2>
               <ul className="grid grid-cols-2 gap-4 text-right">
                 {property.amenities.map((amenity, index) => (
@@ -107,7 +124,7 @@ export default function PropertyDetails() {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-8"
           >
-            <div className="bg-white p-8">
+            <div className="bg-white shadow-lg border border-blue-400/20 p-8">
               <h2 className="text-2xl font-bold mb-6 text-right">السعر</h2>
               <p className="text-3xl font-bold text-primary text-right">
                 {property.price.toLocaleString()} ريال
@@ -116,7 +133,9 @@ export default function PropertyDetails() {
 
             <div className="grid gap-4">
               {property.images.map((image, index) => (
-                <img
+                <Image
+                  width={500}
+                  height={500}
                   key={index}
                   src={image}
                   alt={`${property.title} - صورة ${index + 1}`}

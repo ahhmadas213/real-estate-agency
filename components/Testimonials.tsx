@@ -5,8 +5,8 @@ import { testimonials } from '@/lib/data'
 const Testimonials = () => {
   return (
     <div className='py-24'>
-      <div className='container mx-auto px-6'>
-        <h2 className='text-4xl'>
+      <div className='container mx-auto px-2'>
+        <h2 className='text-2xl'>
           وهنا بعض الكلمات من عملائنا
         </h2>
 

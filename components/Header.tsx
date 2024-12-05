@@ -24,15 +24,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="relative -mb-16">
+    <header className="relative  -mb-16">
       {/* Main Header */}
-      <div className="relative z-50">
+      <div className="relative bg-white/10 backdrop-blur-md z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/">
-                <span className="text-2xl font-bold text-black ">الرؤية</span>
+                <span className="text-2xl font-bold text-blue-400 ">الرؤية</span>
               </Link>
             </div>
 
@@ -55,7 +55,7 @@ const Header = () => {
                   key={item.label}
                   href={item.href}
                   className={`
-                    relative px-3 py-2 text-xl text-slate-100 font-medium transition-colors duration-200
+                    relative px-3 py-2 text-lg text-slate-100 font-medium transition-colors duration-200
                     ${pathname === item.href
                       ? '!text-blue-400 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-400'
                       : 'text-gray-700 hover:text-blue-400'
@@ -76,7 +76,7 @@ const Header = () => {
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
-                className="text-gray-700 hover:text-indigo-600 p-2"
+                className="text-gray-200 hover:text-indigo-600 p-2"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -88,7 +88,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <nav
-        className={`fixed top-0 left-0 bottom-0 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed top-0 left-0 bottom-0 w-64 bg-white  shadow-lg transform transition-transform duration-300 ease-in-out md:hidden z-50 ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
       >
         {/* Mobile Menu Header */}

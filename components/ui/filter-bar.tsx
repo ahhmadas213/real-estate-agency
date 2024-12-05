@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {  MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 interface FilterBarProps {
   onFilter: (filters: { type?: string; location?: string; bedrooms?: string }) => void;
@@ -44,7 +44,7 @@ export function FilterBar({ onFilter }: FilterBarProps) {
               <option value="commercial">تجاري</option>
             </select>
           </div>
-          
+
           <div className="relative">
             <select
               name="location"
@@ -53,10 +53,10 @@ export function FilterBar({ onFilter }: FilterBarProps) {
               className="w-full p-4 bg-white text-right border border-gray-200 appearance-none"
             >
               <option value="">الموقع</option>
-              <option value="riyadh">الرياض</option>
-              <option value="jeddah">جدة</option>
-              <option value="dammam">الدمام</option>
-              <option value="khobar">الخبر</option>
+              <option value="الرياض">الرياض</option>
+              <option value="جدة">جدة</option>
+              <option value="الدمام">الدمام</option>
+              <option value="الخبر">الخبر</option>
             </select>
             <MapPin className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>

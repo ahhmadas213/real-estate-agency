@@ -7,7 +7,7 @@ const TestimoialCard = ({ testimonial }: { testimonial: TestimonialProps }) => {
   const { name, title, rating, testimony } = testimonial
 
   return (
-    <div className='min-w-[350px]  border border-slate-200 shadow-xl h-[400px] ' dir='rtl'>
+    <div className='min-w-[330px] md:w-[350px] border border-slate-200 shadow-xl h-[400px] ' dir='rtl'>
       <div className='p-6 flex flex-col h-full' >
         <div className='flex items-center justify-start gap-2'>
           {Array.from({ length: 5 }, (_, i) => (

@@ -32,7 +32,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-gray-50 p-8 border border-blue-400 hover:bg-gray-100 transition-colors duration-300"
+              className="bg-gray-50 p-8 shadow-lg border border-blue-400/20 hover:bg-gray-100 transition-colors duration-300"
             >
               <service.icon className="w-12 h-12 text-primary mb-6" />
               <h3 className="text-xl font-bold mb-4 text-right">{service.title}</h3>
@@ -45,7 +45,7 @@ export default function Services() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-24 bg-gray-50 p-12 border border-blue-400"
+          className="mt-24 bg-gray-50 p-12 shadow-lg border border-blue-400/20"
         >
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6">لماذا تختارنا؟</h2>

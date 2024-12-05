@@ -1,17 +1,34 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { properties } from "@/lib/data";
 import { Property } from "@/types";
 import { FilterBar } from "@/components/ui/filter-bar";
-import { PropertyCard } from "@/components/ui/property-card";
+import PropertyCard from "@/components/PropertyCard";
+
+const ITEMS_PER_PAGE = 6; // Adjust this value as needed
 
 export default function Properties() {
-  const [filteredProperties, setFilteredProperties] = useState<Property[]>(properties);
+  const [filteredProperties, setFilteredProperties] = useState<Property[]>(properties); // Initialize with all properties
+  const [displayedProperties, setDisplayedProperties] = useState<Property[]>([]);
+  const [page, setPage] = useState(1);
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref);
+
+  // Load initial properties on mount and update displayed properties when `page` or `filteredProperties` change
+  useEffect(() => {
+    setDisplayedProperties(filteredProperties.slice(0, page * ITEMS_PER_PAGE));
+  }, [filteredProperties, page]);
+
+  useEffect(() => {
+    if (inView && displayedProperties.length < filteredProperties.length) {
+      setPage((prevPage) => prevPage + 1);
+    }
+  }, [inView, displayedProperties.length, filteredProperties.length]);
 
   const handleFilter = (filters: { type?: string; location?: string; bedrooms?: string }) => {
-    let filtered = [...properties];
+    let filtered = properties; // Avoid unnecessary spread
 
     if (filters.type && filters.type !== "all") {
       filtered = filtered.filter((p) => p.type === filters.type);
@@ -24,11 +41,14 @@ export default function Properties() {
     if (filters.bedrooms && filters.bedrooms !== "all") {
       const bedroomCount = Number(filters.bedrooms);
       if (!isNaN(bedroomCount)) {
-        filtered = filtered.filter(p => p.bedrooms === bedroomCount);
+        filtered = bedroomCount < 4
+          ? filtered.filter(p => p.bedrooms === bedroomCount)
+          : filtered.filter(p => p.bedrooms! >= bedroomCount);
       }
     }
 
     setFilteredProperties(filtered);
+    setPage(1); // Reset pagination when filters change
   };
 
   return (
@@ -55,13 +75,22 @@ export default function Properties() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
         <FilterBar onFilter={handleFilter} />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProperties.map((property, index) => (
-            <PropertyCard key={property.id} property={property} index={index} />
+        <motion.div
+          className="grid grid-cols-1 place-items-center md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {displayedProperties.map((property, index) => (
+            <motion.div
+              key={property.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <PropertyCard property={property} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        {filteredProperties.length === 0 && (
+        {displayedProperties.length === 0 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -69,6 +98,19 @@ export default function Properties() {
           >
             <p className="text-gray-600 text-lg">لا توجد عقارات تطابق معايير البحث</p>
           </motion.div>
+        )}
+
+        {displayedProperties.length < filteredProperties.length && (
+          <div ref={ref} className="h-20 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-blue-500"
+            >
+              جاري تحميل المزيد...
+            </motion.div>
+          </div>
         )}
       </div>
     </div>
