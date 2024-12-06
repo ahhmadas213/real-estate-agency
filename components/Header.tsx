@@ -19,9 +19,9 @@ const Header = () => {
 
   const navItems = [
     { label: 'الرئيسية', href: '/' },
-    { label: 'من نحن', href: '/about' },
-    { label: 'خدماتنا', href: '/services' },
     { label: 'العقارات', href: '/properties' },
+    { label: 'خدماتنا', href: '/services' },
+    { label: 'من نحن', href: '/about' },
 
   ];
 
@@ -73,7 +73,7 @@ const Header = () => {
 
 
               <Link href="/contact" className='py-2 px-10 cursor-pointer hover:bg-blue-950 transition-all duration-200 bg-black text-white'>
-                اتصل بنا
+                تواصل معنا
               </Link>
             </nav>
 
@@ -132,7 +132,7 @@ const Header = () => {
 
 
           <Link href="/contact" className='py-2 px-10 w-full mt-8 mx-auto cursor-pointer hover:bg-blue-950 transition-all duration-200 bg-black text-white'>
-            اتصل بنا
+            تواصل معنا
           </Link>
 
           <div className='flex mt-8 justify-center items-center gap-5'>
