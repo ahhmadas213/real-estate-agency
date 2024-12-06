@@ -24,13 +24,14 @@ export interface Property {
   description: string;
   price: number;
   location: string;
-  type: 'apartment' | 'villa' | 'land' | 'commercial' | string;
+  type: 'apartment' | 'villa' | 'land' | 'commercial' | 'duplex' | 'penthouse' | string;
   bedrooms?: number;
   bathrooms?: number;
-  area: number;
+  area?: number;
   amenities: string[];
   images: string[];
   featured: boolean;
+  operationType?: 'rent' | 'sale' | 'commercial' | string; // Added operationType
 }
 
 export interface ContactFormData {

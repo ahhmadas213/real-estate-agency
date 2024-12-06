@@ -297,7 +297,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
   },
   {
     id: "2",
@@ -314,7 +315,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
+
   },
   {
     id: "3",
@@ -331,7 +334,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
+
   },
   {
     id: "4",
@@ -365,13 +370,15 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
+
   },
   {
     id: "6",
     title: "بنتهاوس فاخر في أبراج البحر",
     description: "شقة بنتهاوس فاخرة بإطلالة بحرية خلابة",
-    price: 4500000,
+    price: 10000,
     location: "كورنيش جدة",
     type: "penthouse",
     bedrooms: 5,
@@ -382,7 +389,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "rent",
+
   },
   {
     id: "7",
@@ -399,7 +408,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1502672023488-70e25813eb80?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "sell",
+
   },
   {
     id: "8",
@@ -416,7 +427,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600566752355-35792bedcfea?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600566752229-250ed26fb23b?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "sell",
   },
   {
     id: "9",
@@ -433,7 +445,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600573472583-e271a6333011?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
+
   },
   {
     id: "10",
@@ -450,7 +464,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
+
   },
   {
     id: "11",
@@ -467,7 +483,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600121848594-d8644e57abab?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "commercial",
+
   },
   {
     id: "12",
@@ -484,13 +502,15 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "sell",
+
   },
   {
     id: "13",
     title: "شقة روف في حي الخبر الشمالية",
     description: "شقة روف مميزة مع تراس واسع وإطلالة بحرية",
-    price: 1800000,
+    price: 8000,
     location: "الخبر الشمالية، الخبر",
     type: "penthouse",
     bedrooms: 3,
@@ -501,7 +521,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "rent",
+
   },
   {
     id: "14",
@@ -518,7 +540,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "sell",
   },
 
   {
@@ -538,7 +561,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1598528644848-2631149fbcd3?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1598528644847-6f7678742a66?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "sell",
+
   },
   {
     id: "16",
@@ -564,7 +589,7 @@ export const properties: Property[] = [
     id: "17",
     title: "شقة روف مع مسبح خاص",
     description: "شقة روف فاخرة مع مسبح خاص وإطلالة بانورامية",
-    price: 4200000,
+    price: 7200,
     location: "شارع الأمير سلطان، جدة",
     type: "penthouse",
     bedrooms: 4,
@@ -577,13 +602,15 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600607687166-aac4c3eac7f4?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600607687939-ce8a6c25118d?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "rent",
+
   },
   {
     id: "18",
     title: "فيلا مودرن في حي الربيع",
     description: "فيلا عصرية بتصميم مميز وتشطيبات راقية",
-    price: 3100000,
+    price: 9000,
     location: "حي الربيع، الرياض",
     type: "villa",
     bedrooms: 6,
@@ -596,13 +623,15 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0d?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600585154526-990dced4db0e?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "rent",
+
   },
   {
     id: "19",
     title: "شقة استوديو في الشاطئ",
     description: "استوديو أنيق بإطلالة بحرية وموقع حيوي",
-    price: 480000,
+    price: 4800,
     location: "حي الشاطئ، جدة",
     type: "studio",
     bedrooms: 1,
@@ -615,7 +644,9 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1502672260266-1c1ef2d93689?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1502672023488-70e25813eb81?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "rent",
+
   },
   {
     id: "20",
@@ -635,7 +666,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0d?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539b1?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
   },
 
   {
@@ -651,7 +683,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1598885511440-218a568970b0?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
   },
   {
     id: "22",
@@ -681,7 +714,8 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3"
     ],
-    featured: false
+    featured: false,
+    operationType: "sell",
   },
   {
     id: "24",
@@ -712,6 +746,7 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1598887544487-2c137ea51c74?ixlib=rb-4.0.3",
       "https://images.unsplash.com/photo-1598887354946-50d5bbc451e6?ixlib=rb-4.0.3"
     ],
-    featured: true
+    featured: true,
+    operationType: "sell",
   }
 ];

@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { X } from 'lucide-react';
 import { Facebook } from 'lucide-react';
 import { Instagram } from 'lucide-react';
+import { FaSnapchatGhost } from "react-icons/fa";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,6 +47,9 @@ const Header = () => {
               </Link>
               <Link href="/" target='_blank'>
                 <Facebook className='text-slate-200' size={24} />
+              </Link>
+              <Link href="/" target='_blank'>
+                <FaSnapchatGhost className='text-slate-200' size={24} />
               </Link>
             </div>
 
@@ -139,6 +144,9 @@ const Header = () => {
             </Link>
             <Link href="/">
               <Facebook />
+            </Link>
+            <Link href="/" target='_blank'>
+              <FaSnapchatGhost className='text-slate-200' size={24} />
             </Link>
           </div>
         </div>

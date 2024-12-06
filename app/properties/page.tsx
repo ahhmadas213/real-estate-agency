@@ -8,43 +8,91 @@ import { FilterBar } from "@/components/ui/filter-bar";
 import PropertyCard from "@/components/PropertyCard";
 
 const ITEMS_PER_PAGE = 6; // Adjust this value as needed
+// ["مسبح", "حديقة", "موقف سيارات", "مصعد", "أمن"]
 
 export default function Properties() {
-  const [filteredProperties, setFilteredProperties] = useState<Property[]>(properties); // Initialize with all properties
+  const [filteredProperties, setFilteredProperties] = useState<Property[]>(properties);
   const [displayedProperties, setDisplayedProperties] = useState<Property[]>([]);
   const [page, setPage] = useState(1);
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref);
 
-  // Load initial properties on mount and update displayed properties when `page` or `filteredProperties` change
+  // Update displayed properties when `page` or `filteredProperties` change
   useEffect(() => {
     setDisplayedProperties(filteredProperties.slice(0, page * ITEMS_PER_PAGE));
   }, [filteredProperties, page]);
 
+  // Infinite scroll: Load more properties when inView
   useEffect(() => {
     if (inView && displayedProperties.length < filteredProperties.length) {
       setPage((prevPage) => prevPage + 1);
     }
   }, [inView, displayedProperties.length, filteredProperties.length]);
 
-  const handleFilter = (filters: { type?: string; location?: string; bedrooms?: string }) => {
-    let filtered = properties; // Avoid unnecessary spread
+  // Filter handler
+  const handleFilter = (filters: {
+    type?: string;
+    location?: string;
+    bedrooms?: string;
+    operationType?: string;
+    minPrice?: string;
+    maxPrice?: string;
+    bathrooms?: string;
+    area?: string;
+    amenities?: string[];
 
-    if (filters.type && filters.type !== "all") {
+  }) => {
+
+    let filtered = properties;
+
+    if (filters.type && filters.type !== "") {
       filtered = filtered.filter((p) => p.type === filters.type);
     }
 
-    if (filters.location && filters.location !== "all") {
+    if (filters.location && filters.location !== "") {
       filtered = filtered.filter((p) => p.location.includes(filters.location!));
     }
 
-    if (filters.bedrooms && filters.bedrooms !== "all") {
-      const bedroomCount = Number(filters.bedrooms);
-      if (!isNaN(bedroomCount)) {
-        filtered = bedroomCount < 4
-          ? filtered.filter(p => p.bedrooms === bedroomCount)
-          : filtered.filter(p => p.bedrooms! >= bedroomCount);
-      }
+    if (filters.bedrooms && filters.bedrooms !== "") {
+      const bedroomCount = filters.bedrooms === "5+" ? 5 : Number(filters.bedrooms);
+      filtered = filtered.filter((p) =>
+        filters.bedrooms === "5+" ? p.bedrooms! >= 5 : p.bedrooms === bedroomCount
+      );
+
+    }
+
+    if (filters.operationType && filters.operationType !== "") {
+      filtered = filtered.filter((p) => p.operationType === filters.operationType);
+    }
+
+    if (filters.minPrice && !isNaN(Number(filters.minPrice))) {
+      filtered = filtered.filter((p) => p.price >= Number(filters.minPrice));
+    }
+
+    if (filters.maxPrice && !isNaN(Number(filters.maxPrice))) {
+      filtered = filtered.filter((p) => p.price <= Number(filters.maxPrice));
+    }
+
+    if (filters.bathrooms && filters.bathrooms !== "") {
+      const bathroomCount = filters.bathrooms === "4+" ? 4 : Number(filters.bathrooms);
+      filtered = filtered.filter((p) =>
+        filters.bathrooms === "4+" ? p.bathrooms! >= 4 : p.bathrooms === bathroomCount
+      );
+    }
+
+    if (filters.area && !isNaN(Number(filters.area))) {
+      filtered = filtered.filter((p) => p.area! >= Number(filters.area));
+    }
+
+    if (filters.amenities && filters.amenities.length > 0) {
+
+      filtered = filtered.filter((property) =>
+        filters.amenities!.every((amenity) =>
+          property.amenities.some((propertyAmenity) =>
+            propertyAmenity.includes(amenity)
+          )
+        )
+      );
     }
 
     setFilteredProperties(filtered);

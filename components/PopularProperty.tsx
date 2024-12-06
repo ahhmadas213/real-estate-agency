@@ -66,7 +66,7 @@ const PopularProperty = () => {
               </button>
             </div>
 
-            <Link href="/contact" className="py-2 px-10 cursor-pointer hover:bg-blue-400 transition-all duration-100 bg-black text-white">
+            <Link href="/properties" className="py-2 px-10 cursor-pointer hover:bg-blue-400 transition-all duration-100 bg-black text-white">
               اكتشف المزيد
             </Link>
           </div>

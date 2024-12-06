@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 
 
 const PropertyCard = ({ property }: { property: Property }) => {
-  const { title, location, bedrooms, bathrooms, type, images, featured, price } = property
+  const { title, location, bedrooms, bathrooms, type, images, featured, price, operationType } = property
   const [isOpen, setIsOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -69,7 +69,12 @@ const PropertyCard = ({ property }: { property: Property }) => {
               <Home size={16} className="mr-1" /> {type}
             </span>
             <span className="flex gap-1 items-center">
-              <DollarSign size={16} className="mr-1" /> {price.toLocaleString()} ريال
+              <DollarSign size={16} className="mr-1" />
+              {operationType === "rent" ? (<div>
+                {price.toLocaleString()} ريال/شهريا
+              </div>) : (<div>
+                {price.toLocaleString()} ريال
+              </div>)}
             </span>
           </div>
 
@@ -134,9 +139,14 @@ const PropertyCard = ({ property }: { property: Property }) => {
 
             <div className="flex items-center justify-between">
               <span className="text-primary font-bold text-lg">
-                {property.price.toLocaleString()} ريال
+
+                {operationType === "rent" ? (<div>
+                  {price.toLocaleString()} ريال/شهريا
+                </div>) : (<div>
+                  {price.toLocaleString()} ريال
+                </div>)}
               </span>
-              
+
             </div>
 
 
